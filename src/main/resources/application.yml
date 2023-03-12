@@ -1,0 +1,27 @@
+server:
+#  端口
+  port: 8080
+spring:
+#  指定应用名称
+  application:
+    name: reggie_take_out
+#    数据源
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/spring?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: username
+      password: password
+
+mybatis-plus:
+  configuration:
+#    将 student_sys ---> studentSys
+    #在映射实体或者属性时，将数据库中表名和字段名中的下划线去掉，按照驼峰命名法映射
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: ASSIGN_ID
+
+reggie:
+  path: G:\my_img\   #  jpg_path
